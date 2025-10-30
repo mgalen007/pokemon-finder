@@ -23,7 +23,7 @@ def show_pokemons():
             name = data["forms"][0]["name"].capitalize()
             return render_template("index.html", src=sprite_link, pokemon_name=name)
         else:
-            return render_template("index.html",pokemon_name=name, alt=f"{pokemon.capitalize()}")
+            return render_template("index.html",pokemon_name="Pokemon Not Found!", alt=f"{pokemon.capitalize()}")
     
     except requests.exceptions.ConnectTimeout:
         return
